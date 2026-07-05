@@ -2,6 +2,7 @@ package com.github.jadilson22a.estoqueapi.Controller;
 
 import com.github.jadilson22a.estoqueapi.entities.ProdutoDTO;
 import com.github.jadilson22a.estoqueapi.service.ProdutoService;
+import jakarta.validation.Valid;
 import jakarta.websocket.server.PathParam;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class ProdutoController {
     }
     
     @PostMapping
-    public ResponseEntity<?> criar(@RequestBody ProdutoDTO dto){
+    public ResponseEntity<?> criar(@RequestBody @Valid ProdutoDTO dto){
         try {
             service.salvar(dto);
             return new ResponseEntity<>(HttpStatus.CREATED);
@@ -29,7 +30,7 @@ public class ProdutoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> atualizar(
-            @PathVariable(value = "id") Integer id, @RequestBody ProdutoDTO dto){
+            @PathVariable(value = "id") Integer id, @RequestBody @Valid ProdutoDTO dto){
         try{
             service.atualizar(id, dto);
             return new ResponseEntity<>(HttpStatus.OK);
