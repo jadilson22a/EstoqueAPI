@@ -13,7 +13,6 @@ public record ProdutoDTO(
         @PositiveOrZero(message = "O numero precisa ser positivo ou zero")
         Double quantidade,
 
-        @NotBlank(message = "unidade de medida é obrigatorio")
         UnidadeMedida unidadeMedida) {
 
     public Produto toProduto(){
