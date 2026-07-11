@@ -1,13 +1,9 @@
 package com.github.jadilson22a.estoqueapi.exceptions;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
-@Setter
+
 public class RespostaErro {
     private String mensagem;
     private int statusCode;
@@ -26,4 +22,38 @@ public class RespostaErro {
         this.momento = momento;
         this.camposErrados = camposErrados;
     }
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
+
+	public int getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	public LocalDateTime getMomento() {
+		return momento;
+	}
+
+	public void setMomento(LocalDateTime momento) {
+		this.momento = momento;
+	}
+
+	public List<CampoErro> getCamposErrados() {
+		return camposErrados;
+	}
+
+	public void setCamposErrados(List<CampoErro> camposErrados) {
+		this.camposErrados = camposErrados;
+	}
+    
+    
 }

@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "produtos")
 public class Produto {
 
@@ -39,4 +37,38 @@ public class Produto {
     public ProdutoDTO toDTO(){
         return new ProdutoDTO(id, nome, quantidade, unidadeMedida);
     }
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Double getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Double quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public UnidadeMedida getUnidadeMedida() {
+		return unidadeMedida;
+	}
+
+	public void setUnidadeMedida(UnidadeMedida unidadeMedida) {
+		this.unidadeMedida = unidadeMedida;
+	}
+    
+    
 }
